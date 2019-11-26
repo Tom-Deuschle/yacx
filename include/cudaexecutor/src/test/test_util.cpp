@@ -1,5 +1,5 @@
-#include "../include/cudaexecutor/Options.hpp"
-#include "../include/cudaexecutor/util.hpp"
+#include "cudaexecutor/Options.hpp"
+#include "cudaexecutor/util.hpp"
 
 #include <catch2/catch.hpp>
 #include <string>

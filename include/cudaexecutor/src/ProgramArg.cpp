@@ -1,6 +1,6 @@
-#include "../include/cudaexecutor/ProgramArg.hpp"
-#include "../include/cudaexecutor/Exception.hpp"
-#include "../include/cudaexecutor/Logger.hpp"
+#include "cudaexecutor/ProgramArg.hpp"
+#include "cudaexecutor/Exception.hpp"
+#include "cudaexecutor/Logger.hpp"
 
 using cudaexecutor::ProgramArg, cudaexecutor::loglevel;
 

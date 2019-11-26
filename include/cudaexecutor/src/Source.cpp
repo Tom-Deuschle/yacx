@@ -1,5 +1,5 @@
 #include "cudaexecutor/Source.hpp"
-#include "../include/cudaexecutor/Logger.hpp"
+#include "cudaexecutor/Logger.hpp"
 #include "cudaexecutor/Program.hpp"
 
 #include <nvrtc.h>

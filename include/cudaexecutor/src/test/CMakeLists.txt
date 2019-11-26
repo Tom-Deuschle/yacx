@@ -1,16 +1,16 @@
 file(GLOB TESTS "*.cpp")
-file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
+file(GLOB SOURCES "../include/cudaexecutor/src/*.cpp")
 
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/test_header1.hpp
+file(COPY test_header1.hpp
         DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin/test)
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/test_header2.hpp
+file(COPY test_header2.hpp
         DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin/test)
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/test_pixel.hpp
+file(COPY test_pixel.hpp
         DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin/test)
 
 
 add_executable(tests ${SOURCES} ${TESTS})
-SET(catch2_dir ${PROJECT_SOURCE_DIR}/extern/catch2)
+SET(catch2_dir ../../../../extern/catch2)
 
 find_package(Git QUIET)
 if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
@@ -19,7 +19,7 @@ if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
     if(GIT_SUBMODULE)
         message(STATUS "Submodule update")
         execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive
-                WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+                WORKING_DIRECTORY ../../../..
                 RESULT_VARIABLE GIT_SUBMOD_RESULT)
         if(NOT GIT_SUBMOD_RESULT EQUAL "0")
             message(FATAL_ERROR "git submodule update --init failed with ${GIT_SUBMOD_RESULT}, please checkout submodules")

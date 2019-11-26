@@ -1,8 +1,8 @@
 #include "cudaexecutor/Program.hpp"
-#include "../include/cudaexecutor/Exception.hpp"
-#include "../include/cudaexecutor/Headers.hpp"
-#include "../include/cudaexecutor/Logger.hpp"
-#include "../include/cudaexecutor/util.hpp"
+#include "cudaexecutor/Exception.hpp"
+#include "cudaexecutor/Headers.hpp"
+#include "cudaexecutor/Logger.hpp"
+#include "cudaexecutor/util.hpp"
 
 #include <memory>
 #include <utility>

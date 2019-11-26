@@ -1,4 +1,4 @@
-#include "../include/cudaexecutor/ProgramArg.hpp"
+#include "cudaexecutor/ProgramArg.hpp"
 
 #include <catch2/catch.hpp>
 #include <cuda.h>

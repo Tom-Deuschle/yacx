@@ -1,5 +1,5 @@
-#include "../include/cudaexecutor/Device.hpp"
-#include "../include/cudaexecutor/Exception.hpp"
+#include "cudaexecutor/Device.hpp"
+#include "cudaexecutor/Exception.hpp"
 
 using cudaexecutor::Device;
 

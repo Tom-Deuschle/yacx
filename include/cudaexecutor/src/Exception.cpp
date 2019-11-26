@@ -1,5 +1,5 @@
 // Copyright 2019 André Hodapp
-#include "../include/cudaexecutor/Exception.hpp"
+#include "cudaexecutor/Exception.hpp"
 
 /*
  * returns the number of columns of the terminal
