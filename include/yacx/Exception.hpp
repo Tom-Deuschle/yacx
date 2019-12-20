@@ -115,7 +115,7 @@ inline void __checkNvrtcResultError(const nvrtcResult error, const char *file,
 }
 
 //! throws a CUresultException if something went wrong
-#define CUDA_SAFE_CALL(error) __checkCUresultError(error, __FILE__, __LINE__);
+#define CUDA_SAFE_CALL(error) yacx::__checkCUresultError(error, __FILE__, __LINE__);
 inline void __checkCUresultError(const CUresult error, const char *file,
                                  const int line) {
   if (CUDA_SUCCESS != error) {

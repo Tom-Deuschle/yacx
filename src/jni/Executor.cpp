@@ -3,10 +3,12 @@
 #include "Kernel.h"
 #include "KernelUtils.h"
 #include "KernelArgJNI.hpp"
+#include "../../include/yacx/Exception.hpp"
 #include "../../include/yacx/KernelTime.hpp"
 #include "../../include/yacx/Kernel.hpp"
 #include "../../include/yacx/Device.hpp"
 
+#include <cuda.h>
 #include <cstring>
 #include <stdio.h>
 
@@ -46,7 +48,7 @@ jobjectArray Java_Executor_benchmark (JNIEnv* env, jclass cls, jobject jkernel, 
 			void* data = kernelArgJNIPtr->getHostData();
 
 			hostData[i] = data;
-			hostDataBackup[i] = malloc(size);
+			CUDA_SAFE_CALL(cuMemAllocHost(&hostDataBackup[i], size));
 			std::memcpy(hostDataBackup[i], data, size);
 		}
 
@@ -66,7 +68,7 @@ jobjectArray Java_Executor_benchmark (JNIEnv* env, jclass cls, jobject jkernel, 
 
 		//Free backuped host-data
 		for(size_t i = 0; i != args.size(); i++) {
-			free(hostDataBackup[i]);
+			CUDA_SAFE_CALL(cuMemFreeHost(hostDataBackup[i]));
 		}
 
 		//Last run without restore Hostdata
